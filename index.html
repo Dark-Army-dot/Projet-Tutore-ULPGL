@@ -50,19 +50,25 @@
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
+      margin-bottom: 20px;
     }
-    .member {
+    .members img {
       width: 150px;
-      text-align: center;
-    }
-    .member img {
-      width: 100%;
       border-radius: 8px;
       border: 2px solid #004080;
     }
-    .member p {
-      margin-top: 8px;
-      font-weight: bold;
+
+    .member-list {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .member-list ul {
+      list-style: none;
+      padding: 0;
+    }
+    .member-list li {
+      margin-bottom: 8px;
     }
 
     /* Encadreurs */
@@ -73,7 +79,7 @@
     /* Liens téléchargement */
     .downloads a {
       display: inline-block;
-      margin: 10px 0;
+      margin: 10px 10px 10px 0;
       padding: 10px 15px;
       background-color: #004080;
       color: white;
@@ -119,39 +125,31 @@
     <!-- Membres du groupe -->
     <section>
       <h2>Membres du groupe</h2>
+
+      <!-- Images des membres -->
       <div class="members">
-        <div class="member">
-          <img src="membre1.jpg" alt="RUHUSA KAZINGUFU Mertens">
-          <p>RUHUSA KAZINGUFU Mertens</p>
-        </div>
-        <div class="member">
-          <img src="membre2.jpg" alt="BYABE NTIGENGA Oswald">
-          <p>BYABE NTIGENGA Oswald</p>
-        </div>
-        <div class="member">
-          <img src="membre3.jpg" alt="DAVID NZINE Kalumba">
-          <p>DAVID NZINE Kalumba</p>
-        </div>
-        <div class="member">
-          <img src="membre4.jpg" alt="KADEO MESHACH Jean">
-          <p>KADEO MESHACH Jean</p>
-        </div>
-        <div class="member">
-          <img src="membre5.jpg" alt="KAVIRA BUSANGA Huguette">
-          <p>KAVIRA BUSANGA Huguette</p>
-        </div>
-        <div class="member">
-          <img src="membre6.jpg" alt="LUBIMBO MUTUNDA Victoire">
-          <p>LUBIMBO MUTUNDA Victoire</p>
-        </div>
-        <div class="member">
-          <img src="membre7.jpg" alt="BAGUMA MUSHAMUKA Don de DIEU">
-          <p>BAGUMA MUSHAMUKA Don de DIEU</p>
-        </div>
-        <div class="member">
-          <img src="membre8.jpg" alt="USHINDI MUJINYA Karim">
-          <p>USHINDI MUJINYA Karim</p>
-        </div>
+        <img src="membre1.jpg" alt="RUHUSA KAZINGUFU Mertens">
+        <img src="membre2.jpg" alt="BYABE NTIGENGA Oswald">
+        <img src="membre3.jpg" alt="DAVID NZINE Kalumba">
+        <img src="membre4.jpg" alt="KADEO MESHACH Jean">
+        <img src="membre5.jpg" alt="KAVIRA BUSANGA Huguette">
+        <img src="membre6.jpg" alt="LUBIMBO MUTUNDA Victoire">
+        <img src="membre7.jpg" alt="BAGUMA MUSHAMUKA Don de DIEU">
+        <img src="membre8.jpg" alt="USHINDI MUJINYA Karim">
+      </div>
+
+      <!-- Liste des noms et tâches -->
+      <div class="member-list">
+        <ul>
+          <li>RUHUSA KAZINGUFU Mertens – Chef de projet / Analyse / Support technique / Présentation</li>
+          <li>BYABE NTIGENGA Oswald – Rallonge électrique</li>
+          <li>DAVID NZINE Kalumba – Cuiseur solaire</li>
+          <li>KADEO MESHACH Jean – Documentation</li>
+          <li>KAVIRA BUSANGA Huguette – Documentation</li>
+          <li>LUBIMBO MUTUNDA Victoire – Documentation</li>
+          <li>BAGUMA MUSHAMUKA Don de DIEU – Cuiseur solaire</li>
+          <li>USHINDI MUJINYA Karim – Analyse et présentation finale</li>
+        </ul>
       </div>
     </section>
 
