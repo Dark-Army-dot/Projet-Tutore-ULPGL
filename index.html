@@ -3,189 +3,178 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projet Tutoré Faculté des Sciences et Technologies Appliquées ULPGL</title>
+  <title>Projet Tutoré ULPGL</title>
   <style>
     body {
-      background: #0a0f1c;
-      color: #00ffea;
-      font-family: "Courier New", monospace;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      overflow-x: hidden;
+      background: #f5f5f5;
+      color: #333;
     }
-    .terminal {
-      width: 90%;
-      max-width: 1000px;
-      margin: 50px auto;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.85);
-      border: 2px solid #00ffea;
-      border-radius: 12px;
-      box-shadow: 0 0 25px #00ffea;
-      overflow: hidden;
+
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
     }
-    .line {
-      margin: 8px 0;
-      white-space: pre-wrap;
+    header h1 {
+      margin: 0;
+      font-size: 2em;
     }
-    .cursor {
-      display: inline-block;
-      width: 10px;
-      background: #00ffea;
-      margin-left: 5px;
-      animation: blink 1s infinite;
-    }
-    @keyframes blink {
-      50% { background: transparent; }
-    }
-    .links a {
-      color: #ff0080;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .links a:hover {
-      text-shadow: 0 0 10px #ff0080;
-    }
-    /* Section défilement des images */
-    .carousel {
-      width: 90%;
-      max-width: 1000px;
-      margin: 20px auto;
-      overflow: hidden;
-      border: 2px solid #00ffea;
-      border-radius: 12px;
-      box-shadow: 0 0 15px #00ffea;
-      display: flex;
-      align-items: center;
-      background: rgba(0,0,0,0.5);
-    }
-    .carousel-track {
-      display: flex;
-      animation: scroll 25s linear infinite;
-    }
-    .carousel img {
-      height: 120px;
-      margin: 10px;
-      border: 2px solid #00ffea;
-      border-radius: 8px;
-    }
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .contact, .encadreurs {
+
+    main {
       width: 90%;
       max-width: 1000px;
       margin: 30px auto;
-      padding: 15px;
-      border: 2px solid #00ffea;
-      border-radius: 12px;
-      box-shadow: 0 0 20px #00ffea;
-      background: rgba(0,0,0,0.7);
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #004080;
+      border-bottom: 2px solid #004080;
+      padding-bottom: 5px;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    /* Membres */
+    .members {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .member {
+      width: 150px;
       text-align: center;
     }
-    .contact a, .encadreurs a {
-      color: #ff0080;
-      font-weight: bold;
-      text-decoration: none;
+    .member img {
+      width: 100%;
+      border-radius: 8px;
+      border: 2px solid #004080;
     }
-    .contact a:hover, .encadreurs a:hover {
-      text-shadow: 0 0 10px #ff0080;
+    .member p {
+      margin-top: 8px;
+      font-weight: bold;
+    }
+
+    /* Encadreurs */
+    .encadreurs p {
+      margin: 5px 0;
+    }
+
+    /* Liens téléchargement */
+    .downloads a {
+      display: inline-block;
+      margin: 10px 0;
+      padding: 10px 15px;
+      background-color: #004080;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .downloads a:hover {
+      background-color: #0066cc;
+    }
+
+    /* Contact */
+    .contact a {
+      color: #004080;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .contact a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <!-- Carousel des membres -->
-  <div class="carousel">
-    <div class="carousel-track" id="carousel-track">
-      <img src="membre1.jpg" alt="RUHUSA KAZINGUFU Mertens">
-      <img src="membre2.jpg" alt="BYABE NTIGENGA Oswald">
-      <img src="membre3.jpg" alt="DAVID NZINE Kalumba">
-      <img src="membre4.jpg" alt="KADEO MESHACH Jean">
-      <img src="membre5.jpg" alt="KAVIRA BUSANGA Huguette">
-      <img src="membre6.jpg" alt="LUBIMBO MUTUNDA Victoire">
-      <img src="membre7.jpg" alt="BAGUMA MUSHAMUKA Don de DIEU">
-      <img src="membre8.jpg" alt="USHINDI MUJINYA Karim">
-      <!-- On duplique pour un défilement continu -->
-      <img src="membre1.jpg" alt="RUHUSA KAZINGUFU Mertens">
-      <img src="membre2.jpg" alt="BYABE NTIGENGA Oswald">
-      <img src="membre3.jpg" alt="DAVID NZINE Kalumba">
-      <img src="membre4.jpg" alt="KADEO MESHACH Jean">
-      <img src="membre5.jpg" alt="KAVIRA BUSANGA Huguette">
-      <img src="membre6.jpg" alt="LUBIMBO MUTUNDA Victoire">
-      <img src="membre7.jpg" alt="BAGUMA MUSHAMUKA Don de DIEU">
-      <img src="membre8.jpg" alt="USHINDI MUJINYA Karim">
-    </div>
-  </div>
+  <header>
+    <h1>Projet Tutoré 2024-2025</h1>
+    <p>Réalisation d'un Cuiseur Solaire et d'une Rallonge Électrique</p>
+  </header>
 
-  <!-- Terminal -->
-  <div class="terminal" id="terminal">
-    <div class="line">ULPGL Faculté des Sciences et Technologies Appliquées > <span class="cursor"></span></div>
-  </div>
+  <main>
+    <!-- Introduction -->
+    <section>
+      <h2>Introduction</h2>
+      <p>
+        Ce projet a été mené dans le cadre de notre cursus afin de combiner théorie et pratique, 
+        en explorant des solutions innovantes pour des problématiques énergétiques et domestiques.
+      </p>
+      <p>
+        Le cuiseur solaire a été conçu pour exploiter l’énergie solaire afin de cuire les aliments de manière écologique et économique. 
+        Quant à la rallonge électrique, nous avons développé une solution pratique et sécurisée pour répondre aux besoins domestiques tout en respectant les normes de sécurité.
+      </p>
+    </section>
 
-  <!-- Contact -->
-  <div class="contact">
-    Pour toute question, contactez-nous : 
-    <a href="mailto:kazingufumertens@gmail.com">kazingufumertens@gmail.com</a>
-  </div>
+    <!-- Membres du groupe -->
+    <section>
+      <h2>Membres du groupe</h2>
+      <div class="members">
+        <div class="member">
+          <img src="membre1.jpg" alt="RUHUSA KAZINGUFU Mertens">
+          <p>RUHUSA KAZINGUFU Mertens</p>
+        </div>
+        <div class="member">
+          <img src="membre2.jpg" alt="BYABE NTIGENGA Oswald">
+          <p>BYABE NTIGENGA Oswald</p>
+        </div>
+        <div class="member">
+          <img src="membre3.jpg" alt="DAVID NZINE Kalumba">
+          <p>DAVID NZINE Kalumba</p>
+        </div>
+        <div class="member">
+          <img src="membre4.jpg" alt="KADEO MESHACH Jean">
+          <p>KADEO MESHACH Jean</p>
+        </div>
+        <div class="member">
+          <img src="membre5.jpg" alt="KAVIRA BUSANGA Huguette">
+          <p>KAVIRA BUSANGA Huguette</p>
+        </div>
+        <div class="member">
+          <img src="membre6.jpg" alt="LUBIMBO MUTUNDA Victoire">
+          <p>LUBIMBO MUTUNDA Victoire</p>
+        </div>
+        <div class="member">
+          <img src="membre7.jpg" alt="BAGUMA MUSHAMUKA Don de DIEU">
+          <p>BAGUMA MUSHAMUKA Don de DIEU</p>
+        </div>
+        <div class="member">
+          <img src="membre8.jpg" alt="USHINDI MUJINYA Karim">
+          <p>USHINDI MUJINYA Karim</p>
+        </div>
+      </div>
+    </section>
 
-  <!-- Encadreurs -->
-  <div class="encadreurs">
-    Encadreurs :<br>
-    1. CT. KAMUNDALA Janvier<br>
-    2. Ing. MUMBERE Gloire
-  </div>
+    <!-- Encadreurs -->
+    <section class="encadreurs">
+      <h2>Encadreurs</h2>
+      <p>1. CT. KAMUNDALA Janvier</p>
+      <p>2. Ing. MUMBERE Gloire</p>
+    </section>
 
-  <script>
-    const lines = [
-      "Projet Tutoré 2024-2025",
-      "Réalisation d'un Cuiseur Solaire et d'une Rallonge Électrique",
-      "",
-      "Ce projet a été mené dans le cadre de notre cursus afin de combiner à la fois la théorie et la pratique, en explorant des solutions innovantes pour des problématiques énergétiques et domestiques.",
-      "",
-      "Le cuiseur solaire a été conçu pour exploiter l’énergie solaire afin de cuire les aliments de manière écologique et économique.",
-      "Quant à la rallonge électrique, nous avons développé une solution pratique et sécurisée pour répondre aux besoins domestiques tout en respectant les normes de sécurité.",
-      "",
-      "Ce projet a été réalisé grâce à l’implication et à la collaboration de tous les membres de notre groupe :",
-      "1. RUHUSA KAZINGUFU Mertens – Chef de projet / Responsable technique / Analyse, support technique et présentation finale",
-      "2. BYABE NTIGENGA Oswald – Conception et réalisation de la rallonge électrique",
-      "3. DAVID NZINE Kalumba – Conception et réalisation de la rallonge électrique",
-      "4. KADEO MESHACH Jean – Documentation",
-      "5. KAVIRA BUSANGA Huguette – Documentation",
-      "6. LUBIMBO MUTUNDA Victoire – Documentation ",
-      "7. BAGUMA MUSHAMUKA Don de DIEU – Conception et réalisation du cuiseur solaire",
-      "8. USHINDI MUJINYA Karim – Documentation",
-      "",
-      "Nous remercions également nos encadrants pour leur accompagnement et leurs conseils tout au long de ce projet.",
-      "Explorez notre site pour découvrir les détails techniques, les méthodes utilisées et les résultats obtenus.",
-      "Nous espérons que notre travail saura inspirer et démontrer l’importance de la créativité et de l’innovation dans les projets scientifiques et techniques.",
-      "",
-      ">> Rapport disponible :",
-      "   📂 <a href='ProjetTutore2024-2025 RealisationD'unCuiseurSolaireEtD'uneRallongeElectrique.pdf' target='_blank'>Télécharger le Rapport PDF</a>",
-      "",
-      ">> Présentation disponible :",
-      "   🎤 <a href='Presentation__Modifiee_G4.pptx' target='_blank'>Télécharger la Présentation PPTX</a>",
-      "",
-      "---------------------------------------------2024-2025---------------------------------------------"
-    ];
+    <!-- Téléchargements -->
+    <section class="downloads">
+      <h2>Téléchargements</h2>
+      <a href="ProjetTutore2024-2025 RealisationD'unCuiseurSolaireEtD'uneRallongeElectrique.pdf" target="_blank">Télécharger le Rapport PDF</a>
+      <a href="Presentation__Modifiee_G4.pptx" target="_blank">Télécharger la Présentation PPTX</a>
+    </section>
 
-    let i = 0;
-    const terminal = document.getElementById("terminal");
-    const cursor = document.querySelector(".cursor");
+    <!-- Contact -->
+    <section class="contact">
+      <h2>Contact</h2>
+      <p>Pour toute question, contactez-nous : <a href="mailto:kazingufumertens@gmail.com">kazingufumertens@gmail.com</a></p>
+    </section>
+  </main>
 
-    function typeLine() {
-      if (i < lines.length) {
-        let div = document.createElement("div");
-        div.classList.add("line");
-        div.innerHTML = lines[i];
-        terminal.insertBefore(div, cursor.parentNode);
-        i++;
-        setTimeout(typeLine, 800);
-      }
-    }
-
-    window.onload = typeLine;
-  </script>
 </body>
 </html>
