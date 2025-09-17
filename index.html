@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projet Tutoré ULPGL</title>
+  <title>Projet Tutoré Faculté des Sciences et Technologies Appliquées ULPGL</title>
   <style>
     body {
       background: #0a0f1c;
@@ -13,8 +13,6 @@
       padding: 0;
       overflow-x: hidden;
     }
-
-    /* Terminal */
     .terminal {
       width: 90%;
       max-width: 1000px;
@@ -23,14 +21,12 @@
       background: rgba(0, 0, 0, 0.85);
       border: 2px solid #00ffea;
       border-radius: 12px;
-      box-shadow: 0 0 35px #00ffea;
+      box-shadow: 0 0 25px #00ffea;
       overflow: hidden;
-      position: relative;
     }
     .line {
       margin: 8px 0;
       white-space: pre-wrap;
-      position: relative;
     }
     .cursor {
       display: inline-block;
@@ -42,46 +38,15 @@
     @keyframes blink {
       50% { background: transparent; }
     }
-
-    /* Glitch effect */
-    .glitch {
-      position: relative;
-      color: #00ffea;
+    .links a {
+      color: #ff0080;
+      text-decoration: none;
+      font-weight: bold;
     }
-    .glitch::before, .glitch::after {
-      content: attr(data-text);
-      position: absolute;
-      left: 0;
-      width: 100%;
-      overflow: hidden;
-      clip: rect(0,900px,0,0);
+    .links a:hover {
+      text-shadow: 0 0 10px #ff0080;
     }
-    .glitch::before {
-      left: 2px;
-      text-shadow: -2px 0 #ff0080;
-      animation: glitchTop 2s infinite linear alternate-reverse;
-    }
-    .glitch::after {
-      left: -2px;
-      text-shadow: -2px 0 #00ffff;
-      animation: glitchBottom 1.5s infinite linear alternate-reverse;
-    }
-    @keyframes glitchTop {
-      0% { clip: rect(0, 900px, 0, 0); }
-      10% { clip: rect(0, 900px, 10px, 0); }
-      20% { clip: rect(5px, 900px, 15px, 0); }
-      30% { clip: rect(0, 900px, 20px, 0); }
-      100% { clip: rect(0, 900px, 0, 0); }
-    }
-    @keyframes glitchBottom {
-      0% { clip: rect(0, 900px, 0, 0); }
-      10% { clip: rect(10px, 900px, 25px, 0); }
-      20% { clip: rect(5px, 900px, 20px, 0); }
-      30% { clip: rect(0, 900px, 15px, 0); }
-      100% { clip: rect(0, 900px, 0, 0); }
-    }
-
-    /* Carousel futuriste */
+    /* Section défilement des images */
     .carousel {
       width: 90%;
       max-width: 1000px;
@@ -89,11 +54,10 @@
       overflow: hidden;
       border: 2px solid #00ffea;
       border-radius: 12px;
-      box-shadow: 0 0 25px #00ffea;
+      box-shadow: 0 0 15px #00ffea;
       display: flex;
       align-items: center;
       background: rgba(0,0,0,0.5);
-      padding: 10px;
     }
     .carousel-track {
       display: flex;
@@ -101,22 +65,14 @@
     }
     .carousel img {
       height: 120px;
-      margin: 0 10px;
+      margin: 10px;
       border: 2px solid #00ffea;
       border-radius: 8px;
-      animation: float 3s ease-in-out infinite alternate;
-      box-shadow: 0 0 15px #00ffea;
     }
     @keyframes scroll {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      100% { transform: translateY(-10px); }
-    }
-
-    /* Contact & Encadreurs neon style */
     .contact, .encadreurs {
       width: 90%;
       max-width: 1000px;
@@ -124,28 +80,25 @@
       padding: 15px;
       border: 2px solid #00ffea;
       border-radius: 12px;
-      box-shadow: 0 0 25px #00ffea;
+      box-shadow: 0 0 20px #00ffea;
       background: rgba(0,0,0,0.7);
       text-align: center;
-      color: #00ffea;
-      text-shadow: 0 0 10px #00ffea, 0 0 20px #ff0080;
     }
-    .contact a {
+    .contact a, .encadreurs a {
       color: #ff0080;
       font-weight: bold;
       text-decoration: none;
     }
-    .contact a:hover {
-      text-shadow: 0 0 20px #ff0080, 0 0 40px #00ffff;
+    .contact a:hover, .encadreurs a:hover {
+      text-shadow: 0 0 10px #ff0080;
     }
-
   </style>
 </head>
 <body>
 
-  <!-- Carousel membres -->
+  <!-- Carousel des membres -->
   <div class="carousel">
-    <div class="carousel-track">
+    <div class="carousel-track" id="carousel-track">
       <img src="membre1.jpg" alt="RUHUSA KAZINGUFU Mertens">
       <img src="membre2.jpg" alt="BYABE NTIGENGA Oswald">
       <img src="membre3.jpg" alt="DAVID NZINE Kalumba">
@@ -154,6 +107,7 @@
       <img src="membre6.jpg" alt="LUBIMBO MUTUNDA Victoire">
       <img src="membre7.jpg" alt="BAGUMA MUSHAMUKA Don de DIEU">
       <img src="membre8.jpg" alt="USHINDI MUJINYA Karim">
+      <!-- On duplique pour un défilement continu -->
       <img src="membre1.jpg" alt="RUHUSA KAZINGUFU Mertens">
       <img src="membre2.jpg" alt="BYABE NTIGENGA Oswald">
       <img src="membre3.jpg" alt="DAVID NZINE Kalumba">
@@ -185,25 +139,27 @@
 
   <script>
     const lines = [
-      "Projet Tutoré 2024-2025 DEPARTEMENT DE GENIE ELECTRIQUE ET INFORMATIQUE",
+      "Projet Tutoré 2024-2025",
       "Réalisation d'un Cuiseur Solaire et d'une Rallonge Électrique",
       "",
-      "Ce projet a été mené dans le cadre de notre cursus afin de combiner théorie et pratique.",
-      "Le cuiseur solaire a été conçu pour exploiter l’énergie solaire de manière écologique et économique.",
-      "La rallonge électrique offre une solution pratique et sécurisée aux besoins domestiques.",
+      "Ce projet a été mené dans le cadre de notre cursus afin de combiner à la fois la théorie et la pratique, en explorant des solutions innovantes pour des problématiques énergétiques et domestiques.",
       "",
-      "Membres du groupe :",
-      "1. RUHUSA KAZINGUFU Mertens – Chef de projet / Analyse / Support technique / Présentation",
-      "2. BYABE NTIGENGA Oswald – Rallonge électrique",
-      "3. DAVID NZINE Kalumba – Cuiseur solaire",
+      "Le cuiseur solaire a été conçu pour exploiter l’énergie solaire afin de cuire les aliments de manière écologique et économique.",
+      "Quant à la rallonge électrique, nous avons développé une solution pratique et sécurisée pour répondre aux besoins domestiques tout en respectant les normes de sécurité.",
+      "",
+      "Ce projet a été réalisé grâce à l’implication et à la collaboration de tous les membres de notre groupe :",
+      "1. RUHUSA KAZINGUFU Mertens – Chef de projet / Responsable technique / Analyse, support technique et présentation finale",
+      "2. BYABE NTIGENGA Oswald – Conception et réalisation de la rallonge électrique",
+      "3. DAVID NZINE Kalumba – Conception et réalisation de la rallonge électrique",
       "4. KADEO MESHACH Jean – Documentation",
       "5. KAVIRA BUSANGA Huguette – Documentation",
-      "6. LUBIMBO MUTUNDA Victoire – Documentation",
-      "7. BAGUMA MUSHAMUKA Don de DIEU – Cuiseur solaire",
-      "8. USHINDI MUJINYA Karim – Analyse et présentation finale",
+      "6. LUBIMBO MUTUNDA Victoire – Documentation ",
+      "7. BAGUMA MUSHAMUKA Don de DIEU – Conception et réalisation du cuiseur solaire",
+      "8. USHINDI MUJINYA Karim – Documentation",
       "",
-      "Nous remercions nos encadrants pour leur accompagnement et conseils.",
-      "Explorez notre site pour découvrir détails techniques et résultats.",
+      "Nous remercions également nos encadrants pour leur accompagnement et leurs conseils tout au long de ce projet.",
+      "Explorez notre site pour découvrir les détails techniques, les méthodes utilisées et les résultats obtenus.",
+      "Nous espérons que notre travail saura inspirer et démontrer l’importance de la créativité et de l’innovation dans les projets scientifiques et techniques.",
       "",
       ">> Rapport disponible :",
       "   📂 <a href='ProjetTutore2024-2025 RealisationD'unCuiseurSolaireEtD'uneRallongeElectrique.pdf' target='_blank'>Télécharger le Rapport PDF</a>",
@@ -211,30 +167,25 @@
       ">> Présentation disponible :",
       "   🎤 <a href='Presentation__Modifiee_G4.pptx' target='_blank'>Télécharger la Présentation PPTX</a>",
       "",
-      "Fin de la session..."
+      "---------------------------------------------2024-2025---------------------------------------------"
     ];
 
     let i = 0;
     const terminal = document.getElementById("terminal");
     const cursor = document.querySelector(".cursor");
 
-    function glitchText(text) {
-      return text.split("").map(c => Math.random() < 0.05 ? `<span class="glitch" data-text="${c}">${c}</span>` : c).join("");
-    }
-
     function typeLine() {
       if (i < lines.length) {
-        const div = document.createElement("div");
+        let div = document.createElement("div");
         div.classList.add("line");
-        div.innerHTML = glitchText(lines[i]);
+        div.innerHTML = lines[i];
         terminal.insertBefore(div, cursor.parentNode);
         i++;
-        setTimeout(typeLine, 700);
+        setTimeout(typeLine, 800);
       }
     }
 
     window.onload = typeLine;
   </script>
-
 </body>
 </html>
