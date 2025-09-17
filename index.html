@@ -2,25 +2,90 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Réalisation d'un cuiseur solaire et d'une rallonge électrique - ULPGL">
-  <meta name="keywords" content="cuiseur solaire, rallonge électrique, ULPGL, projet tutoré, énergie solaire">
-  <meta name="author" content="Étudiants ULPGL">
-  <title>Projet tutoré ULPGL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet Tutoré ULPGL</title>
+  <style>
+    body {
+      background: #0a0f1c;
+      color: #00ffea;
+      font-family: "Courier New", monospace;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    .terminal {
+      width: 90%;
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.8);
+      border: 2px solid #00ffea;
+      border-radius: 12px;
+      box-shadow: 0 0 25px #00ffea;
+    }
+    .line {
+      margin: 8px 0;
+      white-space: pre-wrap;
+    }
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      background: #00ffea;
+      margin-left: 5px;
+      animation: blink 1s infinite;
+    }
+    @keyframes blink {
+      50% { background: transparent; }
+    }
+    .links {
+      margin-top: 20px;
+    }
+    a {
+      color: #ff0080;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-shadow: 0 0 10px #ff0080;
+    }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; background: #0d1117; color: #c9d1d9; text-align: center; padding: 40px;">
-  <h1 style="color:#58a6ff;">Projet tutoré ULPGL</h1>
-  <h2>Réalisation d'un cuiseur solaire et d'une rallonge électrique</h2>
-  <p>
-    Ce projet a été réalisé dans le cadre d’un travail tutoré à l’ULPGL. 
-    Il présente la conception et la fabrication d’un cuiseur solaire ainsi que d’une rallonge électrique à 5 prises.
-  </p>
-  <h3>📂 Documents disponibles :</h3>
-  <ul style="list-style: none; padding: 0;">
-    <li><a href="ProjetTutore2024-2025 RealisationD'unCuiseurSolaireEtD'uneRallongeElectrique.pdf" target="_blank" style="color:#3fb950;">📄 Rapport complet (PDF)</a></li>
-    <li><a href="Presentation__Modifiee_G4.pptx" target="_blank" style="color:#3fb950;">🎥 Présentation PowerPoint</a></li>
-  </ul>
-  <footer style="margin-top:40px; font-size:12px; color:#8b949e;">
-    © 2025 ULPGL – Projet tutoré
-  </footer>
+<body>
+  <div class="terminal" id="terminal">
+    <div class="line">ULPGL Kinshasa > <span class="cursor"></span></div>
+  </div>
+
+  <script>
+    const lines = [
+      "Projet Tutoré 2024-2025",
+      "Réalisation d'un Cuiseur Solaire et d'une Rallonge Électrique",
+      "",
+      ">> Rapport disponible :",
+      "   📂 <a href='ProjetTutore2024-2025 RealisationD'unCuiseurSolaireEtD'uneRallongeElectrique.pdf' target='_blank'>Télécharger le Rapport PDF</a>",
+      "",
+      ">> Présentation disponible :",
+      "   🎤 <a href='Presentation__Modifiee_G4.pptx' target='_blank'>Télécharger la Présentation PPTX</a>",
+      "",
+      "Fin de la session..."
+    ];
+
+    let i = 0;
+    const terminal = document.getElementById("terminal");
+    const cursor = document.querySelector(".cursor");
+
+    function typeLine() {
+      if (i < lines.length) {
+        let div = document.createElement("div");
+        div.classList.add("line");
+        div.innerHTML = lines[i];
+        terminal.insertBefore(div, cursor.parentNode);
+        i++;
+        setTimeout(typeLine, 800);
+      }
+    }
+
+    window.onload = typeLine;
+  </script>
 </body>
 </html>
+
